@@ -59,7 +59,6 @@ function CreateOrder() {
                         <input type="text" name="address" required />
                     </div>
                 </div>
-
                 <div>
                     <input
                         type="checkbox"
