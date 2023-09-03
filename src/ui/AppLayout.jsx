@@ -14,7 +14,7 @@ function AppLayout() {
             {isLoading && <Spinner />}
             <Header />
             <div className="overflow-scroll my-10">
-                <main className=" w-20 mx-auto max-w-3xl">
+                <main className="mx-auto max-w-3xl">
                     <Outlet />
                 </main>
             </div>

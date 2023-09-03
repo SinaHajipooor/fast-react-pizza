@@ -70,7 +70,7 @@ function CreateOrder() {
                 </div>
 
                 <div>
-                    <button disabled={isSubmiting}>Order now</button>
+                    <button className="bg-yellow-400 uppercase tracking-wide rounded-full font-semibold text-stone-800 py-3 px-4 inline-block hover:bg-yellow-300 transition-colors duration-300 focus:outline-none focus:ring focus:ring-yellow-300" disabled={isSubmiting}>Order now</button>
                 </div>
             </Form>
         </div>
