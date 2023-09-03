@@ -10,12 +10,14 @@ function AppLayout() {
     const isLoading = navigation.state === 'loading';
     // ui
     return (
-        <div className="layout">
+        <div className="grid  grid-rows-[auto_1fr_auto] ">
             {isLoading && <Spinner />}
             <Header />
-            <main>
-                <Outlet />
-            </main>
+            <div className="overflow-scroll my-10">
+                <main className=" w-20 mx-auto max-w-3xl">
+                    <Outlet />
+                </main>
+            </div>
             <CartOverview />
         </div>
     )
