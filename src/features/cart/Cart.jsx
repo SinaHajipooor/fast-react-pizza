@@ -7,7 +7,7 @@ import EmptyCart from './EmptyCart'
 
 function Cart() {
     //states
-    const username = useSelector(store => store.user.username)
+    const username = useSelector(store => store.user.username);
     const cart = useSelector(getCart);
     const dispatch = useDispatch();
     //ui
