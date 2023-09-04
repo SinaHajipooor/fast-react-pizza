@@ -1,17 +1,18 @@
-import { useNavigate, useRouteError } from 'react-router-dom';
+import { useRouteError } from 'react-router-dom';
+import LinkButton from './LinkButton';
 
 function Error() {
-    const navigate = useNavigate();
-    // we had defined this component as the erroe element in our routes obj , and now we can access to the error that user may get like this :
-    const error = useRouteError();
-    // ui 
-    return (
-        <div>
-            <h1>Something went wrong 😢</h1>
-            <p>{error.data || error.message}</p>
-            <button onClick={() => navigate(-1)}>&larr; Go back</button>
-        </div>
-    );
+  const error = useRouteError();
+  console.log(error);
+
+  return (
+    <div>
+      <h1>Something went wrong 😢</h1>
+      <p>{error.data || error.message}</p>
+
+      <LinkButton to="-1">&larr; Go back</LinkButton>
+    </div>
+  );
 }
 
 export default Error;
