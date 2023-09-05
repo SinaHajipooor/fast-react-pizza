@@ -22,7 +22,7 @@ function CreateOrder() {
     const [withPriority, setWithPriority] = useState(false);
     const navigation = useNavigation();
     const isSubmitting = navigation.state === 'submitting';
-    const { username, status: addressStatus, position, address, error: errorAddress } = useSelector(store => store.user);
+    const { status: addressStatus, position, address, error: errorAddress } = useSelector(store => store.user);
     const isLoadingAddress = addressStatus === 'loading';
     const formErrors = useActionData();
     const cart = useSelector(getCart);
