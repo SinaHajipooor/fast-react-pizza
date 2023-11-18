@@ -21,7 +21,7 @@ const initialState = {
 };
 
 
-function reducer(state = initialState, action) {
+function accountReducer(state = initialState, action) {
     switch (action.type) {
         case 'account/deposit':
             return { ...state, balance: state.balance + action.payload }
@@ -38,7 +38,17 @@ function reducer(state = initialState, action) {
 }
 
 
-const testStore = createStore(reducer);
+
+function customerReducer(state = initialStateCustomer, action) {
+    switch (action.type) {
+        case 'customer/createCustomer':
+            return { ...state, fullName: action.payload.fullName, natioanlID: action.payload.natioanlID, createdAt: action.payload.createdAt };
+
+        default: return state
+    }
+}
+
+const testStore = createStore(accountReducer);
 
 store.dispatch({ type: 'account/deposit', payload: 5000 });
 store.dispatch({ type: 'account/requestLoan', payload: { amount: 1000, purpose: 'buy a car' } })
@@ -56,4 +66,19 @@ function requestLoan(amount, purpose) {
 }
 function payLoan() {
     return { type: 'account/payLoan' }
+}
+
+const initialStateCustomer = {
+    fullName: '',
+    nationalID: '',
+    createdAt: ''
+}
+
+// action creators
+function createCustomer(fullName, natioanlID) {
+    return { type: 'customer/createCustomer', payload: { fullName, natioanlID, createdAt: new Date().toISOString() } }
+}
+
+function updateName(fullName) {
+    return { type: 'account/updateName', payload: fullName }
 }
