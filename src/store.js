@@ -44,3 +44,16 @@ store.dispatch({ type: 'account/deposit', payload: 5000 });
 store.dispatch({ type: 'account/requestLoan', payload: { amount: 1000, purpose: 'buy a car' } })
 store.dispatch({ type: 'account/payLoan' })
 
+//create action creator
+function deposit(amount) {
+    return { type: 'account/deposit', payload: amount }
+}
+function withdraw(amount) {
+    return { type: 'account/withdraw', payload: amount }
+}
+function requestLoan(amount, purpose) {
+    return { type: 'account/requestLoan', payload: { amount, purpose } }
+}
+function payLoan() {
+    return { type: 'account/payLoan' }
+}
